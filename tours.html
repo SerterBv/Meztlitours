@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meztli Tours - Tu Aventura Comienza Aquí</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base font and background color */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8;
+        }
+        /* Custom styles for the hero section background image and overlay */
+        .hero-section {
+            background-image: url('https://placehold.co/1920x800/6B46C1/FFFFFF?text=Paisaje+Meztli+Tours'); /* Placeholder image for hero banner */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.5); /* Darkens the image for better text readability */
+        }
+        /* Custom styles for a subtle shadow on cards for depth */
+        .card-shadow {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        /* Styles for responsive navigation menu */
+        .nav-menu {
+            display: none; /* Hidden by default on small screens */
+        }
+        .nav-menu.active {
+            display: flex; /* Displayed when active (hamburger menu clicked) */
+        }
+        /* Media query to show full navigation and hide hamburger on larger screens */
+        @media (min-width: 768px) {
+            .nav-menu {
+                display: flex; /* Always display navigation on desktop */
+            }
+            .hamburger {
+                display: none; /* Hide hamburger icon on desktop */
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header Section: Contains navigation bar -->
+    <header class="bg-gradient-to-r from-purple-700 to-indigo-700 text-white p-4 shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center flex-wrap">
+            <!-- Logo/Site Title -->
+            <div class="text-3xl font-bold rounded-md bg-purple-600 px-3 py-1 shadow-md">
+                <a href="#" class="hover:text-purple-200 transition duration-300">Meztli Tours</a>
+            </div>
+            <!-- Hamburger Menu for Mobile -->
+            <div class="md:hidden">
+                <button id="hamburger-menu" class="text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Navigation Links -->
+            <ul id="nav-links" class="nav-menu md:flex flex-col md:flex-row md:space-x-8 text-lg w-full md:w-auto mt-4 md:mt-0 items-center">
+                <li><a href="#inicio" class="block py-2 md:py-0 hover:text-purple-200 transition duration-300 rounded-md px-3">Inicio</a></li>
+                <li><a href="#tours" class="block py-2 md:py-0 hover:text-purple-200 transition duration-300 rounded-md px-3">Tours</a></li>
+                <li><a href="#nosotros" class="block py-2 md:py-0 hover:text-purple-200 transition duration-300 rounded-md px-3">Nosotros</a></li>
+                <li><a href="#contacto" class="block py-2 md:py-0 hover:text-purple-200 transition duration-300 rounded-md px-3">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section: Main visual and call to action -->
+    <section id="inicio" class="hero-section h-screen flex items-center justify-center text-center text-white relative">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="container mx-auto px-4 z-10">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 animate-fadeInUp drop-shadow-lg">Meztli Tours: Explora, Descubre, Vive</h1>
+            <p class="text-xl md:text-2xl mb-8 leading-relaxed animate-fadeInUp delay-200 drop-shadow-md">
+                Tu puerta de entrada a experiencias inolvidables en México.
+            </p>
+            <a href="#tours" class="inline-block bg-white text-purple-700 font-bold py-3 px-8 rounded-full text-lg hover:bg-purple-100 transition duration-300 transform hover:scale-105 shadow-xl animate-fadeInUp delay-400">
+                Ver Nuestros Tours
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section: Information about the company -->
+    <section id="nosotros" class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-purple-700 mb-8">¿Quiénes Somos?</h2>
+            <p class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-700">
+                En Meztli Tours, creemos que viajar es más que visitar lugares; es conectar con culturas, explorar paisajes asombrosos y crear recuerdos que durarán toda la vida. Somos apasionados por mostrar la belleza y riqueza de México, ofreciendo experiencias auténticas y personalizadas. Con guías expertos y un compromiso con el turismo sostenible, garantizamos que cada viaje con Meztli sea único e inolvidable.
+            </p>
+            <img src="https://placehold.co/800x450/A78BFA/FFFFFF?text=Equipo+Meztli" alt="Image of Meztli Team" class="rounded-lg shadow-xl mx-auto mt-10 w-full max-w-2xl h-auto object-cover">
+        </div>
+    </section>
+
+    <!-- Popular Tours Section: Highlights of popular tour packages -->
+    <section id="tours" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-purple-700 mb-12">Nuestros Tours Populares</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tour Card 1: Chichén Itzá -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 card-shadow">
+                    <img src="https://placehold.co/600x400/9333EA/FFFFFF?text=Chichen+Itza" alt="Image of Chichen Itza" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-purple-800 mb-3">Chichén Itzá y Cenote Sagrado</h3>
+                        <p class="text-gray-600 mb-4">
+                            Explora una de las Nuevas Siete Maravillas del Mundo y refréscate en un místico cenote maya.
+                        </p>
+                        <div class="flex justify-between items-center mb-4 text-gray-700">
+                            <span><strong class="text-purple-600">Duración:</strong> Día Completo</span>
+                            <span><strong class="text-purple-600">Precio:</strong> Desde $79 USD</span>
+                        </div>
+                        <a href="#" class="block w-full text-center bg-purple-600 text-white py-3 rounded-full hover:bg-purple-700 transition duration-300 font-semibold">
+                            Ver Detalles
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tour Card 2: Tulum -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 card-shadow">
+                    <img src="https://placehold.co/600x400/5B21B6/FFFFFF?text=Tulum+Playa" alt="Image of Tulum Beach" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-purple-800 mb-3">Ruinas de Tulum y Playas Escondidas</h3>
+                        <p class="text-gray-600 mb-4">
+                            Descubre la única zona arqueológica frente al mar y relájate en playas vírgenes.
+                        </p>
+                        <div class="flex justify-between items-center mb-4 text-gray-700">
+                            <span><strong class="text-purple-600">Duración:</strong> Medio Día</span>
+                            <span><strong class="text-purple-600">Precio:</strong> Desde $65 USD</span>
+                        </div>
+                        <a href="#" class="block w-full text-center bg-purple-600 text-white py-3 rounded-full hover:bg-purple-700 transition duration-300 font-semibold">
+                            Ver Detalles
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tour Card 3: Cenotes -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 card-shadow">
+                    <img src="https://placehold.co/600x400/7E22CE/FFFFFF?text=Cenote+Aventura" alt="Image of Cenote Adventure" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-purple-800 mb-3">Aventura en Cenotes Subterráneos</h3>
+                        <p class="text-gray-600 mb-4">
+                            Nada, snorkel y explora impresionantes sistemas de cuevas de agua dulce.
+                        </p>
+                        <div class="flex justify-between items-center mb-4 text-gray-700">
+                            <span><strong class="text-purple-600">Duración:</strong> 4 Horas</span>
+                            <span><strong class="text-purple-600">Precio:</strong> Desde $55 USD</span>
+                        </div>
+                        <a href="#" class="block w-full text-center bg-purple-600 text-white py-3 rounded-full hover:bg-purple-700 transition duration-300 font-semibold">
+                            Ver Detalles
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Button to view all tours -->
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-purple-800 transition duration-300 transform hover:scale-105 shadow-lg">
+                    Ver Todos los Tours
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section: Highlights company's unique selling points -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-purple-700 mb-12">¿Por Qué Elegir Meztli Tours?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Benefit Card 1 -->
+                <div class="p-6 rounded-xl shadow-md bg-purple-50 hover:bg-purple-100 transition duration-300 card-shadow">
+                    <div class="text-5xl text-purple-600 mb-4 flex justify-center">💡</div> <!-- Icon for "Expert Guides" -->
+                    <h3 class="text-xl font-semibold mb-2">Guías Expertos</h3>
+                    <p class="text-gray-600">Conoce los secretos y la historia de cada lugar con nuestros guías certificados.</p>
+                </div>
+                <!-- Benefit Card 2 -->
+                <div class="p-6 rounded-xl shadow-md bg-purple-50 hover:bg-purple-100 transition duration-300 card-shadow">
+                    <div class="text-5xl text-purple-600 mb-4 flex justify-center">🤝</div> <!-- Icon for "Authentic Experiences" -->
+                    <h3 class="text-xl font-semibold mb-2">Experiencias Auténticas</h3>
+                    <p class="text-gray-600">Sumérgete en la cultura local y vive momentos genuinos.</p>
+                </div>
+                <!-- Benefit Card 3 -->
+                <div class="p-6 rounded-xl shadow-md bg-purple-50 hover:bg-purple-100 transition duration-300 card-shadow">
+                    <div class="text-5xl text-purple-600 mb-4 flex justify-center">✅</div> <!-- Icon for "Guaranteed Safety" -->
+                    <h3 class="text-xl font-semibold mb-2">Seguridad Garantizada</h3>
+                    <p class="text-gray-600">Tu bienestar es nuestra prioridad en cada paso del viaje.</p>
+                </div>
+                <!-- Benefit Card 4 -->
+                <div class="p-6 rounded-xl shadow-md bg-purple-50 hover:bg-purple-100 transition duration-300 card-shadow">
+                    <div class="text-5xl text-purple-600 mb-4 flex justify-center">🌿</div> <!-- Icon for "Sustainable Tourism" -->
+                    <h3 class="text-xl font-semibold mb-2">Turismo Sostenible</h3>
+                    <p class="text-gray-600">Exploramos con respeto, cuidando el planeta y las comunidades.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section: Customer reviews -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-purple-700 mb-12">Lo Que Dicen Nuestros Viajeros</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md card-shadow flex flex-col justify-between">
+                    <p class="text-lg italic text-gray-700 mb-6">
+                        "¡Meztli Tours hizo de mi viaje a México una experiencia mágica! Los guías son increíbles y los lugares visitados superaron mis expectativas. ¡Totalmente recomendado!"
+                    </p>
+                    <p class="font-semibold text-purple-600">- Ana G., España</p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md card-shadow flex flex-col justify-between">
+                    <p class="text-lg italic text-gray-700 mb-6">
+                        "Nunca pensé que aprendería tanto sobre la cultura maya. El tour por Chichén Itzá fue fascinante y el cenote, simplemente espectacular. ¡Gracias, Meztli!"
+                    </p>
+                    <p class="font-semibold text-purple-600">- Carlos R., Colombia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section: Contact form and information -->
+    <section id="contacto" class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-purple-700 mb-12">Contáctanos</h2>
+            <div class="max-w-3xl mx-auto bg-gray-50 p-8 rounded-xl shadow-lg card-shadow">
+                <p class="text-lg text-gray-700 mb-6">¿Tienes preguntas o quieres planificar un tour a medida? ¡Estamos aquí para ayudarte!</p>
+                <!-- Contact Form -->
+                <form class="space-y-6">
+                    <div>
+                        <input type="text" placeholder="Tu Nombre" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Tu Correo Electrónico" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <input type="tel" placeholder="Tu Teléfono (Opcional)" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <textarea placeholder="Tu Mensaje" rows="5" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-purple-600 text-white font-bold py-3 rounded-full hover:bg-purple-700 transition duration-300 transform hover:scale-105 shadow-md">
+                        Enviar Mensaje
+                    </button>
+                </form>
+                <!-- Contact Information and Social Media Links -->
+                <div class="mt-8 text-left">
+                    <h3 class="text-2xl font-semibold text-purple-800 mb-4">Nuestra Información</h3>
+                    <p class="text-gray-700 mb-2"><strong>Teléfono:</strong> +52 998 123 4567</p>
+                    <p class="text-gray-700 mb-2"><strong>Email:</strong> info@meztlitours.com</p>
+                    <p class="text-gray-700 mb-4"><strong>Horario:</strong> Lunes - Viernes: 9:00 AM - 6:00 PM (CST)</p>
+                    <p class="text-gray-700 mb-4"><strong>Dirección:</strong> Av. Principal #123, Cancún, Quintana Roo, México</p>
+                    <div class="flex space-x-6 justify-center md:justify-start">
+                        <!-- Facebook Icon -->
+                        <a href="https://facebook.com/meztlitours" target="_blank" class="text-purple-600 hover:text-purple-800 transition duration-300 text-3xl">
+                            <svg fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.5-1.333h2.167v-3h-3.667c-3.118 0-4.333 2.067-4.333 4.5v1.5z"></path></svg>
+                        </a>
+                        <!-- Instagram Icon -->
+                        <a href="https://instagram.com/meztlitours" target="_blank" class="text-purple-600 hover:text-purple-800 transition duration-300 text-3xl">
+                            <svg fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8"><path d="M12 2c3.309 0 3.701.014 5.011.071 1.171.05 1.805.249 2.227.415.562.217.96.477 1.385.902.425.425.685.823.902 1.385.166.422.365 1.056.415 2.227.057 1.31.071 1.701.071 5.011s-.014 3.701-.071 5.011c-.05 1.171-.249 1.805-.415 2.227-.217.562-.477.96-.902 1.385-.425.425-.823.685-1.385.902-.422.166-1.056.365-2.227.415-1.31.057-1.701.071-5.011.071s-3.701-.014-5.011-.071c-1.171-.05-1.805-.249-2.227-.415-.562-.217-.96-.477-1.385-.902-.425-.425-.685-.823-.902-1.385-.166-.422-.365-1.056-.415-2.227-.057-1.31-.071-1.701-.071-5.011s.014-3.701.071-5.011c.05-1.171.249-1.805.415-2.227.217-.562.477-.96.902-1.385.425-.425.823-.685 1.385-.902.422-.166 1.056-.365 2.227-.415c1.31-.057 1.701-.071 5.011-.071zm0-2c-3.359 0-3.771.014-5.091.07c-1.19.05-1.82.259-2.298.444-.482.186-.87.426-1.272.828-.402.402-.642.79-.828 1.272-.185.478-.394 1.108-.444 2.298-.056 1.32-.07 1.732-.07 5.091s.014 3.771.07 5.091c.05 1.19.259 1.82.444 2.298.186.482.426.87.828 1.272.402.402.79.642 1.272.828.478.185 1.108.394 2.298.444 1.32.056 1.732.07 5.091.07s3.771-.014 5.091-.07c1.19-.05 1.82-.259 2.298-.444.482-.186.87-.426 1.272-.828.402-.402.642-.79.828-1.272.185-.478.394-1.108.444-2.298.056-1.32.07-1.732-.07-5.091s-.014-3.771-.07-5.091c-.05-1.19-.259-1.82-.444-2.298-.186-.482-.426-.87-.828-1.272-.402-.402-.79-.642-.828-1.272-.185-.478-.394-1.108-.444-2.298-.056-1.32-.07-1.732-.07-5.091zm0 4a8 8 0 100 16 8 8 0 000-16zm0 2a6 6 0 110 12 6 6 0 010-12zm-3 8a3 3 0 100-6 3 3 0 000 6z"></path></svg>
+                        </a>
+                        <!-- WhatsApp Icon -->
+                        <a href="https://wa.me/529981234567" target="_blank" class="text-purple-600 hover:text-purple-800 transition duration-300 text-3xl">
+                            <svg fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8"><path d="M12.04 2c-5.45 0-9.916 4.46-9.916 9.916 0 1.58.413 3.12 1.198 4.485L2 22l5.753-1.502c1.3-.778 2.827-1.196 4.287-1.196h.005c5.454 0 9.919-4.46 9.919-9.917C21.956 6.46 17.492 2 12.04 2zm0 1.67c4.587 0 8.24 3.733 8.24 8.247 0 4.514-3.653 8.248-8.24 8.248-1.488 0-2.93-.414-4.167-1.19L4.4 20.21l1.644-4.834c-.813-1.24-1.26-2.677-1.26-4.18 0-4.513 3.653-8.247 8.24-8.247zm-1.492 2.378c-.272-.054-.536-.08-1.15-.08-.613 0-1.012.184-1.366.526-.354.342-.888.898-.888 2.172 0 1.275.918 2.515 1.05 2.69.132.174 1.832 2.805 4.382 3.844 2.55.99 3.064.843 3.61.79.544-.055 1.77-.72 2.022-1.42.253-.7.253-1.29 0-1.804-.252-.514-.888-.79-1.366-1.01-.478-.22-1.012-.34-1.46-.34-.448 0-.88.136-1.206.39-.325.254-.783.74-.988.96-.205.22-.397.246-.66.06-.263-.187-.87-.31-.87-1.29 0-.982.72-1.378.83-1.49.11-.112.246-.29.37-.44.124-.15.26-.34.39-.49.13-.15.195-.246.295-.4.1-.15.05-.28-.01-.41-.06-.13-.53-.18-1.09-.18z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section: Copyright, legal links, and payment methods -->
+    <footer class="bg-gradient-to-r from-purple-800 to-indigo-800 text-white p-8 text-center rounded-t-lg shadow-inner">
+        <div class="container mx-auto px-4">
+            <div class="mb-6">
+                <a href="#" class="text-3xl font-bold rounded-md bg-purple-700 px-3 py-1 shadow-md hover:text-purple-200 transition duration-300">Meztli Tours</a>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center items-center md:space-x-8 mb-6 text-sm">
+                <a href="#inicio" class="hover:underline my-1 md:my-0">Inicio</a>
+                <a href="#tours" class="hover:underline my-1 md:my-0">Tours</a>
+                <a href="#nosotros" class="hover:underline my-1 md:my-0">Nosotros</a>
+                <a href="#contacto" class="hover:underline my-1 md:my-0">Contacto</a>
+                <a href="#" class="hover:underline my-1 md:my-0">Política de Privacidad</a>
+                <a href="#" class="hover:underline my-1 md:my-0">Términos y Condiciones</a>
+            </div>
+            <p class="text-gray-300 text-sm">&copy; 2024 Meztli Tours. Todos los derechos reservados.</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <!-- Payment method logos (placeholders) -->
+                <img src="https://placehold.co/60x40/FFFFFF/000000?text=Visa" alt="Visa" class="h-6 w-auto">
+                <img src="https://placehold.co/60x40/FFFFFF/000000?text=Mastercard" alt="Mastercard" class="h-6 w-auto">
+                <img src="https://placehold.co/60x40/FFFFFF/000000?text=PayPal" alt="PayPal" class="h-6 w-auto">
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for responsive hamburger menu functionality -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        // Toggle navigation menu visibility when hamburger button is clicked
+        hamburgerBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a navigation link is clicked (especially for mobile smooth scrolling)
+        document.querySelectorAll('#nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                // Only collapse on smaller screens
+                if (window.innerWidth < 768) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
